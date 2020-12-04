@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is a private project, that hopefully becomes famous",
+  "main": "src/server.ts",
+  "author": "Dr4kk0nnys",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "typescript": "^4.1.2"
+  }
+}
