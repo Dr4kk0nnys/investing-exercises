@@ -1,0 +1,18 @@
+<p>Investing is very important, there are a lot of areas where you can make your money grow. The same comes with the investing profiles. You can be a conservative investor, aggressive and even moderate. With an aggressive investor mentality, you must choose great opportunities. Having $ 20k to spend on a small cap, which one would be the greatest choice:</p>
+
+                        <div id="choices">
+                            <input type="checkbox" id="poll-1-2" name="poll-1" class="input_radio_polls">
+                            <label for="poll-1">$ 14.20 per action, Market Cap is $ 895.1 millions and 12-Month Trailing P/E Ratio at about 1.0</label>
+                            <br>
+                            <input type="checkbox" id="poll-2-2" name="poll-2" class="input_radio_polls">
+                            <label for="poll-2">They focus on earning more instead of less.</label>
+                            <br>
+                            <input type="checkbox" id="poll-3-2" name="poll-3" class="input_radio_polls">
+                            <label for="poll-3">They pay the bills before they pay themselves.</label>
+                            <br>
+                            <input type="checkbox" id="poll-4-2" name="poll-4" class="input_radio_polls">
+                            <label for="poll-4">They invest in small caps.</label>
+                            <br>
+                            <input type="checkbox" id="poll-5-2" name="poll-5" class="input_radio_polls">
+                            <label for="poll-5">They pay courses about finances and investing.</label>
+                        </div>
