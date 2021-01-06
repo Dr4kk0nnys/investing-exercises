@@ -4,7 +4,8 @@ const router = express.Router();
 import pollsSorter from '../utils/pollsSorter';
 
 
-router.post('/', (req, res) => {
+router.get('/:pageID', (req, res) => res.render('exercises/' + req.params.pageID));
+router.post('/:pageID', (req, res) => {
     /*
         * Object.entries will be an array of arrays:
             [ [ 'poll-3-1', 'checked' ], [ 'poll-1-2', 'checked' ] ]
@@ -14,15 +15,10 @@ router.post('/', (req, res) => {
 
         * To get the wrong answers, get the Object.entries and remove the rightAnswers.
     */
-    console.log(req.body);
-    
-    // const rightAnswers = Object.entries(req.body).filter(key => key[0] in pollsSorter);
-    // const wrongAnswers = Object.entries(req.body).filter(key => !(key[0] in pollsSorter))
+    const rightAnswers = Object.entries(req.body).filter(key =>   key[0] in pollsSorter);
+    const wrongAnswers = Object.entries(req.body).filter(key => !(key[0] in pollsSorter))
 
-    // console.log(rightAnswers);
-    // console.log(wrongAnswers);
-    
-    res.send('Hello World!');
+    return res.render('exercises/' + req.params.pageID, {rightAnswers, wrongAnswers});
 });
 
 export default router;
