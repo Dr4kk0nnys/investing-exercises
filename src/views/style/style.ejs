@@ -1,7 +1,7 @@
 <style>
     /* Input / Choices / Polls */
 
-    h2 {
+    .question-title {
         padding-top: 20px;
     }
 
@@ -10,8 +10,51 @@
         font-weight: 600;
     }
 
+    label {
+        vertical-align: bottom;
+    }
+
     .input_radio_polls {
-        margin-top: 10px;
+        position: relative;
+        cursor: pointer;
+        margin: 10px 10px;
+    }
+
+    .input_radio_polls:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        left: 0;
+        background-color:#e9e9e9;
+    }
+
+    .input_radio_polls:checked:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        left: 0;
+        background-color:#1E80EF;
+    }
+    
+    .input_radio_polls:checked:after {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        top: 2px;
+        left: 6px;
     }
 
 
@@ -19,7 +62,7 @@
         margin-top: 5%;
 
         width: 30%;
-        margin-left: 35%;
+        margin-left: 33%;
 
         background-color: #4CAF50; /* Green */
         border: none;
@@ -30,8 +73,6 @@
         text-decoration: none;
         display: inline-block;
         font-size: 15px;
-
-        position: relative;
     }
 
     #submit:hover {

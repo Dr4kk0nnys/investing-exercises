@@ -8,9 +8,9 @@
         id:          (poll-3-1, poll-1-2)
         alternative: (a, b, c, d, e)
 */
-const pollsSorter = {
+const exercisesSorter = {
     'poll-3-1': 'c',
     'poll-1-2': 'a'
 }
 
-export default pollsSorter;
+export default exercisesSorter;
