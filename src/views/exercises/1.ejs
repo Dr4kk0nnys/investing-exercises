@@ -26,20 +26,20 @@
                             <p>It's widely known that you should always pay attention to your expenses. No matter how much you earn, you should never spend more than 60% of the total. Although many people follow this rule, they simply cannot become rich. A possible reason for such event is:</p>
 
                             <div name="poll-1" id="poll-1-choices">
-                                <input type="checkbox" id="poll-1-1" value="checked"  name="poll-1-1" class="input_radio_polls">
-                                <label for="poll-1-1">They pay themselves before the bills.</label>
+                                <input type="checkbox" id="poll-1-1" value="checked" name="poll-1-1" class="input_radio_polls">
+                                <label class="label-for-poll" for="poll-1-1">They pay themselves before the bills.</label>
                                 <br>
-                                <input type="checkbox" id="poll-2-1" value="checked"  name="poll-2-1" class="input_radio_polls">
-                                <label for="poll-2-1">They focus on earning more instead of less.</label>
+                                <input type="checkbox" id="poll-2-1" value="checked" name="poll-2-1" class="input_radio_polls">
+                                <label class="label-for-poll" for="poll-2-1">They focus on earning more instead of less.</label>
                                 <br>
-                                <input type="checkbox" id="poll-3-1" value="checked"  name="poll-3-1" class="input_radio_polls">
-                                <label for="poll-3-1">They pay the bills before they pay themselves.</label>
+                                <input type="checkbox" id="poll-3-1" value="checked" name="poll-3-1" class="input_radio_polls">
+                                <label class="label-for-poll" for="poll-3-1">They pay the bills before they pay themselves.</label>
                                 <br>
-                                <input type="checkbox" id="poll-4-1" value="checked"  name="poll-4-1" class="input_radio_polls">
-                                <label for="poll-4-1">They invest in small caps.</label>
+                                <input type="checkbox" id="poll-4-1" value="checked" name="poll-4-1" class="input_radio_polls">
+                                <label class="label-for-poll" for="poll-4-1">They invest in small caps.</label>
                                 <br>
-                                <input type="checkbox" id="poll-5-1" value="checked"  name="poll-5-1" class="input_radio_polls">
-                                <label for="poll-5-1">They pay courses about finances and investing.</label>
+                                <input type="checkbox" id="poll-5-1" value="checked" name="poll-5-1" class="input_radio_polls">
+                                <label class="label-for-poll" for="poll-5-1">They pay courses about finances and investing.</label>
                             </div>
 
                             <h2 class="question-title"># Question 2</h2>
@@ -48,16 +48,16 @@
 
                             <div name="poll-2" id="poll-2-choices">
                                 <input type="checkbox" id="poll-1-2" value="checked" name="poll-1-2" class="input_radio_polls">
-                                <label for="poll-1-2">Multiplying the price of the stock by the number of shares.</label>
+                                <label class="label-for-poll" for="poll-1-2">Multiplying the price of the stock by the number of shares.</label>
                                 <br>
                                 <input type="checkbox" id="poll-2-2" value="checked" name="poll-2-2" class="input_radio_polls">
-                                <label for="poll-2-2">Multiplying the market-value of a given company by the number of shares.</label>
+                                <label class="label-for-poll" for="poll-2-2">Multiplying the market-value of a given company by the number of shares.</label>
                                 <br>
                                 <input type="checkbox" id="poll-3-2" value="checked" name="poll-3-2" class="input_radio_polls">
-                                <label for="poll-3-2">Dividing the liquid debt by the price of the share.</label>
+                                <label class="label-for-poll" for="poll-3-2">Dividing the liquid debt by the price of the share.</label>
                                 <br>
                                 <input type="checkbox" id="poll-4-2" value="checked" name="poll-4-2" class="input_radio_polls">
-                                <label for="poll-4-2">This value is not possible to be obtained.</label>
+                                <label class="label-for-poll" for="poll-4-2">This value is not possible to be obtained.</label>
                             </div>
                         </div>
 
@@ -67,4 +67,36 @@
             </div>
         </div>
     </body>
+
+    <script>
+        const rightAnswers = '<%= rightAnswers %>'.split(',');
+        const wrongAnswers = '<%= wrongAnswers %>'.split(',');
+        
+        const exercisesSorter = '<%= sorter %>'.split(',');
+
+        function executeRightAndWrongLogic(list, _class) {
+
+            for (let i = 0; i < list.length; i += 2) {
+                const element = document.getElementById(list[i]);
+                
+                if (element) {
+                    element.setAttribute('checked', 'true');
+                    element.classList.add(_class);
+                }
+            }
+        }
+        executeRightAndWrongLogic(rightAnswers, 'right-checkbox');
+        executeRightAndWrongLogic(wrongAnswers, 'wrong-checkbox');
+
+        if (wrongAnswers[0] !== "" || rightAnswers[0] !== "") {
+            for (const element of document.getElementsByClassName('label-for-poll')) element.style.color = 'rgb(238, 80, 80)';
+        }
+
+        for (const element of exercisesSorter) {
+            const labelElement = document.querySelector(`label[for="${element}"]`);
+            
+            if (labelElement) labelElement.style.color = 'rgb(77, 226, 77)';
+            else break;
+        }
+    </script>
 </html>
